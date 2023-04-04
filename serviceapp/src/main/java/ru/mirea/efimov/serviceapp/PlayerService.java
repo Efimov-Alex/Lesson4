@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -32,6 +33,7 @@ public	class	PlayerService	extends	Service	{
     public	void	onCreate()	{
         super.onCreate();
         Log.d(PlayerService.class.getSimpleName(), "Music: " + "Тестовая песня, 6  секунд.");
+        Toast.makeText(this, "Music: " + "Тестовая песня, 6  секунд.", Toast.LENGTH_SHORT).show();
         NotificationCompat.Builder	builder	=	new	NotificationCompat.Builder(this,	CHANNEL_ID)
                 .setContentText("Playing....")
                 .setSmallIcon(R.mipmap.ic_launcher)
